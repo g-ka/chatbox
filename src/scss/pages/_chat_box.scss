@@ -1,0 +1,56 @@
+.chat_box_section{
+  display: flex;
+  flex-direction: column;
+  row-gap: 4rem;
+  width: 100%;
+  align-items: center;
+  padding-bottom: 4rem;
+
+  &_top{
+    padding: 1rem;
+    background-color: black;
+    color: white;
+    width: 100%;
+    text-align: center;
+  }
+
+  &_chat{
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.2rem;
+
+    &_left, &_right{      
+      background-color: rgb(148, 255, 148);
+      border-radius: 10px;
+      padding: 1rem 2rem;
+      list-style-type: none;
+      max-width: 25rem;      
+    }
+
+    &_left{
+      transform: translateX(-100%);      
+    }
+    &_right{
+      transform: translateX(100%);
+
+      // &_trash{
+      //   cursor: pointer;
+      // }
+
+      // p{
+      //   display: inline-block;
+      //   margin-left: 1rem;
+      // }
+    }
+  }
+
+  &_form{
+    display: flex;
+    column-gap: 1rem;
+
+    input, button{
+      padding: 0.5rem 1rem;
+      font-size: 1.2rem;
+    }
+  }
+}

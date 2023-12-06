@@ -1,0 +1,33 @@
+.home_section{
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  align-items: center;
+
+  &_top{
+    padding: 1rem;
+    background-color: black;
+    color: white;
+    width: 100%;
+    text-align: center;
+  }
+
+  ul{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 1rem 2rem;
+    li{
+      width: 50vw;
+      display: flex;      
+      background-color: burlywood;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      justify-content: space-between;
+
+      p{
+        text-transform: capitalize;
+      }
+    }
+  }
+}

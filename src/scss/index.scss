@@ -1,0 +1,11 @@
+@use "./generic/generic";
+
+@use "./component/header";
+
+@use "./pages/sign_up";
+@use "./pages/sign_in";
+@use "./pages/home";
+@use "./pages/req_sent";
+@use "./pages/req_recieved";
+@use "./pages/connections";
+@use "./pages/chat_box";
