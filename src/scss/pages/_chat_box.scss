@@ -14,6 +14,13 @@
     text-align: center;
   }
 
+  &_navs{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    align-items: center;
+  }
+
   &_chat{
     display: flex;
     flex-direction: column;
