@@ -190,6 +190,12 @@ header {
   width: 100%;
   text-align: center;
 }
+.chat_box_section_navs {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  align-items: center;
+}
 .chat_box_section_chat {
   display: flex;
   flex-direction: column;
