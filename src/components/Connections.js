@@ -88,6 +88,9 @@ const Connections = () => {
       <div className='connections_section_top'>
         CONNECTIONS
       </div>
+      <div>
+        <p>{msg}</p>
+      </div>
       {
         is_loading ?
          <p className='connections_section_loading'>Loading...</p> :
