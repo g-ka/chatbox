@@ -9,14 +9,14 @@ const Connections = () => {
 
   const [ connections_list, set_connections_list ] = useState([]);  
 
-  const [ button , set_button ] = useState('Chat');
+  const [ msg , set_msg ] = useState('');
   const [ is_loading, set_is_loading ] = useState(true);
   const [ connections_list_err_msg, set_connections_list_err_msg ] = useState('');
   const [ chat_err_msg, set_chat_err_msg ] = useState('');
 
   const navigate = useNavigate();
 
-  const button_style = { pointerEvents: button === 'Chat' ? 'auto' :'none'};
+  const button_style = { pointerEvents: msg === '' ? 'auto' :'none'};
 
   useEffect(() =>
   {
@@ -49,7 +49,7 @@ const Connections = () => {
 
   const fetch_messages = async (username) =>
   {
-    set_button('fetching chat');
+    set_msg('fetching chat');
 
     try
     {
@@ -72,13 +72,13 @@ const Connections = () => {
     catch(err)
     {
       set_chat_err_msg(err.message);
-      set_button('Failed') ; 
+      set_msg('Failed') ; 
     }
     finally
     {
       setTimeout(() =>
       {
-        set_button('Chat');
+        set_msg('');
       }, 3000);
     } 
   };
@@ -102,7 +102,7 @@ const Connections = () => {
                           onClick={() => fetch_messages(user.username)}
                           style={button_style}
                         >
-                          {button}
+                          Chat
                         </button>
                       </li>
                     )
