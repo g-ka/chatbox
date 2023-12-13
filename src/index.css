@@ -212,7 +212,17 @@ header {
   transform: translateX(-100%);
 }
 .chat_box_section_chat_right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   transform: translateX(100%);
+}
+.chat_box_section_chat_right_trash {
+  cursor: pointer;
+}
+.chat_box_section_chat_right p {
+  display: inline-block;
+  margin-left: 1rem;
 }
 .chat_box_section_form {
   display: flex;

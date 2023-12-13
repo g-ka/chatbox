@@ -38,16 +38,19 @@
       transform: translateX(-100%);      
     }
     &_right{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;    
       transform: translateX(100%);
 
-      // &_trash{
-      //   cursor: pointer;
-      // }
+      &_trash{
+        cursor: pointer;
+      }
 
-      // p{
-      //   display: inline-block;
-      //   margin-left: 1rem;
-      // }
+      p{
+        display: inline-block;
+        margin-left: 1rem;
+      }
     }
   }
 

@@ -58,6 +58,26 @@ const Chat_box = () => {
     } 
   };
 
+  const delete_message = async (id) =>
+  {
+    try
+    {
+      const response = await Axios.delete(
+        `/chat_box/delete_message/${other_username}/${id}`,
+        {
+          headers: { "Content-Type": 'application/json' },
+          withCredentials: true
+        }
+      );
+
+      if(response.status === 200) fetch_messages(other_username);
+    }
+    catch(err)
+    {
+      return
+    }
+  };
+
   return (
     <section className='chat_box_section'>
       <div className='chat_box_section_top'>
@@ -72,8 +92,8 @@ const Chat_box = () => {
           prev_chat.map(chat => {
             return(
               <li className={chat.auth ? 'chat_box_section_chat_right' : 'chat_box_section_chat_left'} key={chat._id}>
-                {/* { chat.auth ? <FontAwesomeIcon className='chat_box_section_chat_right_trash' icon={faTrash} onClick={() => delete_message(chat.id)}/> : null} */}
                 <p>{chat.message}</p>
+                { chat.auth ? <FontAwesomeIcon className='chat_box_section_chat_right_trash' icon={faTrash} onClick={() => delete_message(chat.id)}/> : null}                
               </li>
             )
           })
