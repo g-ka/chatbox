@@ -12,8 +12,10 @@ const Chat_box = () => {
   const [ message, set_message ] = useState('');
   const [ button , set_button ] = useState('Send');
   const [ send_err_msg, set_send_err_msg ] = useState('');
+  const [ del_load, set_del_load ] = useState(false);
 
   const button_event = { pointerEvents: button === 'Send' ? 'auto' :'none'};
+  const del_icon = { pointerEvents: del_load ? 'none' : 'auto' };
 
   const send_message = async (e) =>
   {
@@ -60,6 +62,8 @@ const Chat_box = () => {
 
   const delete_message = async (id) =>
   {
+    set_del_load(true);
+
     try
     {
       const response = await Axios.delete(
@@ -75,6 +79,10 @@ const Chat_box = () => {
     catch(err)
     {
       return
+    }
+    finally
+    {
+      set_del_load(false);
     }
   };
 
@@ -93,7 +101,7 @@ const Chat_box = () => {
             return(
               <li className={chat.auth ? 'chat_box_section_chat_right' : 'chat_box_section_chat_left'} key={chat._id}>
                 <p>{chat.message}</p>
-                { chat.auth ? <FontAwesomeIcon className='chat_box_section_chat_right_trash' icon={faTrash} onClick={() => delete_message(chat.id)}/> : null}                
+                { chat.auth ? <FontAwesomeIcon style={del_icon} className='chat_box_section_chat_right_trash' icon={faTrash} onClick={() => delete_message(chat.id)}/> : null}                
               </li>
             )
           })
