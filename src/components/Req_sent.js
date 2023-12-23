@@ -39,9 +39,6 @@ const Req_sent = () => {
 
   return (
     <section className='req_sent_section'>
-      <div className='req_sent_section_top'>
-        REQUEST(S) SENT 
-      </div>
       {
         is_loading ?
          <p className='req_sent_section_loading'>Loading...</p> :

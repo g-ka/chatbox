@@ -112,9 +112,6 @@ const Home = () => {
 
   return (
     <section className='home_section'>
-      <div className='home_section_top'>
-        HOME
-      </div>
       {
         is_loading ?
           <p className='home_section_loading'>Loading...</p> :

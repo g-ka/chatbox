@@ -4,13 +4,27 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Poppins", sans-serif;
+}
+
 header {
   display: flex;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  background-color: gold;
-  padding: 1rem 0;
+  background-color: black;
+  padding: 1rem 3rem;
+}
+header .name {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+}
+header .nav_menu {
+  display: flex;
+  column-gap: 2rem;
 }
 
 .signup_section {
@@ -57,13 +71,6 @@ header {
   row-gap: 2rem;
   align-items: center;
 }
-.home_section_top {
-  padding: 1rem;
-  background-color: black;
-  color: white;
-  width: 100%;
-  text-align: center;
-}
 .home_section ul {
   display: flex;
   flex-direction: column;
@@ -87,13 +94,6 @@ header {
   flex-direction: column;
   row-gap: 2rem;
   align-items: center;
-}
-.req_sent_section_top {
-  padding: 1rem;
-  background-color: black;
-  color: white;
-  width: 100%;
-  text-align: center;
 }
 .req_sent_section ul {
   display: flex;
@@ -119,13 +119,6 @@ header {
   row-gap: 2rem;
   align-items: center;
 }
-.req_recieved_section_top {
-  padding: 1rem;
-  background-color: black;
-  color: white;
-  width: 100%;
-  text-align: center;
-}
 .req_recieved_section ul {
   display: flex;
   flex-direction: column;
@@ -149,13 +142,6 @@ header {
   flex-direction: column;
   row-gap: 2rem;
   align-items: center;
-}
-.connections_section_top {
-  padding: 1rem;
-  background-color: black;
-  color: white;
-  width: 100%;
-  text-align: center;
 }
 .connections_section ul {
   display: flex;
@@ -185,7 +171,7 @@ header {
 }
 .chat_box_section_top {
   padding: 1rem;
-  background-color: black;
+  background-color: rgb(88, 88, 251);
   color: white;
   width: 100%;
   text-align: center;

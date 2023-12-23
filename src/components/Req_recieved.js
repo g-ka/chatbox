@@ -71,9 +71,6 @@ const Req_recieved = () => {
 
   return (
     <section className='req_recieved_section'>
-      <div className='req_recieved_section_top'>
-        REQUEST(S) RECIEVED 
-      </div>
       {
         is_loading ?
          <p className='req_recieved_section_loading'>Loading...</p> :

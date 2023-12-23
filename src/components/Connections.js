@@ -85,9 +85,6 @@ const Connections = () => {
 
   return (
     <section className='connections_section'>
-      <div className='connections_section_top'>
-        CONNECTIONS
-      </div>
       <div>
         <p>{msg}</p>
       </div>
