@@ -12,9 +12,9 @@ const Auth_header = () => {
   };
 
   return (
-    <header>
-      <Link to='/auth/' className='name'>Chatbox</Link>
-      <nav className='nav_menu'>
+    <header className='header'>
+      <Link to='/auth/' className='header_name'>Chatbox</Link>
+      <nav className='header_nav'>
         <NavLink 
           to='/auth/' 
           style={navStyles}

@@ -8,7 +8,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-header {
+.header {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -16,15 +16,15 @@ header {
   background-color: black;
   padding: 1rem 3rem;
 }
-header .name {
+.header_name {
   text-decoration: none;
   color: white;
   font-size: 2rem;
   font-weight: 700;
 }
-header .nav_menu {
+.header_nav {
   display: flex;
-  column-gap: 2rem;
+  column-gap: 3rem;
 }
 
 .signup_section {
@@ -66,27 +66,71 @@ header .nav_menu {
 }
 
 .home_section {
+  position: relative;
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
   align-items: center;
 }
-.home_section ul {
+.home_section_loading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 5rem;
+}
+.home_section_list {
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
   padding: 1rem 2rem;
+  margin-top: 2rem;
+  width: 100%;
 }
-.home_section ul li {
-  width: 50vw;
+.home_section_list_user {
   display: flex;
-  background-color: burlywood;
   padding: 1rem 1.5rem;
   border-radius: 10px;
   justify-content: space-between;
+  align-items: center;
+  background-color: rgb(122, 155, 254);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
-.home_section ul li p {
+.home_section_list_user p {
+  font-size: 1.5rem;
   text-transform: capitalize;
+}
+.home_section_list_user button {
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+}
+.home_section_list_user button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.home_section_sign_out {
+  background-color: rgb(252, 80, 80);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+}
+.home_section_sign_out:hover {
+  background-color: rgba(252, 80, 80, 0.8);
+}
+.home_section_connection_err_message {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: rgb(252, 80, 80);
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .req_sent_section {

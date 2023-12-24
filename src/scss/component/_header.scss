@@ -1,4 +1,4 @@
-header{
+.header{
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -6,15 +6,15 @@ header{
   background-color: black;
   padding: 1rem 3rem;
 
-  .name{
+  &_name{
     text-decoration: none;
     color: white;
     font-size: 2rem;
     font-weight: 700;
   }
 
-  .nav_menu{
+  &_nav{
     display: flex;
-    column-gap: 2rem;
+    column-gap: 3rem;
   }
 }

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Axios from '../api/Axios';
 import useData from '../hooks/useData';
+import { faSquareCheck, faShare, faReply } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Home = () => {
 
@@ -15,8 +17,10 @@ const Home = () => {
   const [ is_loading, set_is_loading ] = useState(true);
   const [ req_sent_loading, set_req_sent_loading ] = useState(false);
   const [ users_list_err_msg, set_users_list_err_msg ] = useState('');
-  const [ sign_out_err_msg, set_sign_out_err_msg ] = useState('');  
   const [ req_sent_err_msg, set_req_sent_err_msg ] = useState('');  
+  const [ signout_button, set_signout_button ] = useState('Sign Out');
+
+  const sign_out_styles = { pointerEvents: signout_button==='Sign Out' ? 'auto' : 'none'};
 
   const navigate = useNavigate();
 
@@ -59,6 +63,8 @@ const Home = () => {
 
   const sign_out_handler = async () =>
   {
+    set_signout_button('Signing Out...');
+
     try
     {
       const response = await Axios.get(
@@ -76,7 +82,14 @@ const Home = () => {
     }
     catch(err)
     {
-      set_sign_out_err_msg(err.message);
+      set_signout_button('Failed');
+    }
+    finally
+    {
+      setTimeout(() =>
+      {
+        set_signout_button('Sign Out');
+      }, 3000);
     }
   }
 
@@ -107,6 +120,9 @@ const Home = () => {
     finally
     {
       set_req_sent_loading(false);
+      setTimeout(() => {
+        set_req_sent_err_msg('');
+      }, 3000);
     }
   };
 
@@ -123,21 +139,21 @@ const Home = () => {
                       return (
                         <li key={user.username} className='home_section_list_user'>
                           <p>{user.username}</p>
-                          <p>Connected</p>
+                          <FontAwesomeIcon icon={faSquareCheck} />
                         </li>
                       )
                     else if(req_sent_name.includes(user.username)) 
                       return (
                         <li key={user.username} className='home_section_list_user'>
                           <p>{user.username}</p>
-                          <p>Request sent</p>
+                          <FontAwesomeIcon icon={faShare} />
                         </li>
                       )
                     else if(req_recieved_name.includes(user.username)) 
                       return (
                         <li key={user.username} className='home_section_list_user'>
                           <p>{user.username}</p>
-                          <p>Request recieved</p>
+                          <FontAwesomeIcon icon={faReply} />
                         </li>
                       )
                     else 
@@ -160,9 +176,16 @@ const Home = () => {
       <button 
         onClick={sign_out_handler}
         className='home_section_sign_out'
+        style={sign_out_styles}
       >
-        Sign Out
+        {signout_button}
       </button>
+      <p 
+        className='home_section_connection_err_message'
+        style={{opacity: req_sent_err_msg? '1' : '0'}}
+      >
+        {req_sent_err_msg}
+      </p>
     </section>    
   )
 }
