@@ -40,7 +40,10 @@ const Sign_up = () => {
     } 
     catch(err)
     {
-      set_err_msg(err.message);    
+      if(err.status === 400) set_err_msg('Fill all credentials');
+      if(err.status === 409) set_err_msg('Username already taken, try different username');
+      if(err.status === 500) set_err_msg('Server/Network issue, please retry');
+      else set_err_msg(err.message);    
       set_button('Failed') ; 
     }
     finally
