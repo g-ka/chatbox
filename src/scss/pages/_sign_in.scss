@@ -3,18 +3,52 @@
   flex-direction: column;
   height: 100vh;
   justify-content: center;
+  align-items: center;
   margin-left: 50%;
-  transform: translateX(-49%);
+  transform: translateX(-50%);
 
-  form{
+  &_form{
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
     margin-bottom: 2rem;
+
+    label{
+      font-size: 1.2rem;
+    }
+    
+    input{
+      padding: 0.5rem 1rem;
+      border: 1px solid gray;
+      border-radius: 10px;
+      font-size: 1.2rem;
+    }
+
+    button{
+      padding: 0.5rem 1rem;
+      background-color: rgb(88, 88, 251);
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    button:hover{
+      background-color: rgba(88, 88, 251,0.8);
+    }
   }
 
-  &_link{
+  &_signup_link{
     display: flex;
     column-gap: 1rem;
+
+    p{
+      font-size: 1.2rem;
+    }
+
+    a{
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
   }
 }

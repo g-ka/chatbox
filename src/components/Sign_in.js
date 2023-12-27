@@ -100,7 +100,7 @@ const Sign_up = () => {
           {button}
         </button>
       </form>
-      <div className='signin_section_link'>
+      <div className='signin_section_signup_link'>
         <p>Didn't resigter?</p> 
         <Link to='/'>Sign Up</Link>
       </div>      

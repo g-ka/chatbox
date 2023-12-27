@@ -94,7 +94,7 @@ const Sign_up = () => {
           {button}
         </button>
       </form>
-      <div className='signin_section_link'>
+      <div className='signup_section_signin_link'>
         <p>Already registered?</p> 
         <Link to='/sign_in'>Sign In</Link>
       </div>        
