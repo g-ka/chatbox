@@ -60,24 +60,26 @@ function App() {
       {
         is_loading ?
           <p className='initial_loading'>Loading...</p> :
-            <Routes>
-              <Route path='/' element={<Layout />} >
-        
-                {/* Public Routes */}
-                <Route path='/' element={<Sign_up />} />
-                <Route path='/sign_in' element={<Sign_in />} />
-        
-                {/* Protected Routes */}   
-                <Route path='/auth' element={<Auth_layout />} >
-                  <Route path='/auth/' element={<Home />} />    
-                  <Route path='/auth/req_sent' element={<Req_sent />} />    
-                  <Route path='/auth/req_recieved' element={<Req_recieved />} />    
-                  <Route path='/auth/connections' element={<Connections />} />  
-                  <Route path='/auth/chat_box' element={<Chat_box />} />  
-                </Route>
-        
-              </Route>
-            </Routes>
+            err_msg ?
+              <p className='initial_error'>{err_msg}</p> :
+                <Routes>
+                  <Route path='/' element={<Layout />} >
+            
+                    {/* Public Routes */}
+                    <Route path='/' element={<Sign_up />} />
+                    <Route path='/sign_in' element={<Sign_in />} />
+            
+                    {/* Protected Routes */}   
+                    <Route path='/auth' element={<Auth_layout />} >
+                      <Route path='/auth/' element={<Home />} />    
+                      <Route path='/auth/req_sent' element={<Req_sent />} />    
+                      <Route path='/auth/req_recieved' element={<Req_recieved />} />    
+                      <Route path='/auth/connections' element={<Connections />} />  
+                      <Route path='/auth/chat_box' element={<Chat_box />} />  
+                    </Route>
+            
+                  </Route>
+                </Routes>
       } 
     </>       
   );
