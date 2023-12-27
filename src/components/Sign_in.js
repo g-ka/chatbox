@@ -46,11 +46,11 @@ const Sign_up = () => {
     } 
     catch(err)
     {
-      if(err.status === 400) set_err_msg('Fill all credentials');
-      if(err.status === 401) set_err_msg('Incorrect username/password');
-      if(err.status === 500) set_err_msg('Server/Network issue, please retry');
+      if(err.response.status == 400) set_err_msg('Fill all credentials');
+      else if(err.response.status == 401) set_err_msg('Incorrect username/password');
+      else if(err.response.status == 500) set_err_msg('Server/Network issue, please retry');
       else set_err_msg(err.message);    
-      set_button('Failed') ; 
+      set_button('Failed'); 
     }
     finally
     {

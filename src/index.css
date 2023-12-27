@@ -47,6 +47,11 @@ body {
   margin-left: 50%;
   transform: translateX(-50%);
 }
+.signup_section_error {
+  font-size: 1.1rem;
+  color: red;
+  margin-bottom: 1rem;
+}
 .signup_section_form {
   display: flex;
   flex-direction: column;
@@ -94,6 +99,11 @@ body {
   align-items: center;
   margin-left: 50%;
   transform: translateX(-50%);
+}
+.signin_section_error {
+  font-size: 1.1rem;
+  color: red;
+  margin-bottom: 1rem;
 }
 .signin_section_form {
   display: flex;

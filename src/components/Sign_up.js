@@ -40,11 +40,11 @@ const Sign_up = () => {
     } 
     catch(err)
     {
-      if(err.status === 400) set_err_msg('Fill all credentials');
-      if(err.status === 409) set_err_msg('Username already taken, try different username');
-      if(err.status === 500) set_err_msg('Server/Network issue, please retry');
+      if(err.response.status == 400) set_err_msg('Fill all credentials');
+      else if(err.response.status == 409) set_err_msg('Username already taken, try different username');
+      else if(err.response.status == 500) set_err_msg('Server/Network issue, please retry');
       else set_err_msg(err.message);    
-      set_button('Failed') ; 
+      set_button('Failed'); 
     }
     finally
     {

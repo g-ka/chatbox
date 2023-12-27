@@ -7,6 +7,12 @@
   margin-left: 50%;
   transform: translateX(-50%);
 
+  &_error{
+    font-size: 1.1rem;
+    color: red;
+    margin-bottom: 1rem;
+  }
+
   &_form{
     display: flex;
     flex-direction: column;
