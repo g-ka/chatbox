@@ -1,8 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import Hamburger_nav_bar from './Hamburger_nav_bar';
+import { faBars} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import useData from '../hooks/useData';
 
 const Auth_header = () => {
+
+  const { set_is_open } = useData();
 
   const navStyles = ({ isActive }) => {
     return {
@@ -41,6 +47,13 @@ const Auth_header = () => {
           Connections
         </NavLink>        
       </nav>      
+      <button 
+        className='header_menu'
+        onClick={() => set_is_open(prev => !prev)}
+      >
+        <FontAwesomeIcon className='header_menu_icon' icon={faBars} />
+        <Hamburger_nav_bar />
+      </button>
     </header>
   )
 }

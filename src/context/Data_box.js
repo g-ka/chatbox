@@ -9,6 +9,7 @@ const Data_provider = ({children}) =>
   const [ auth, set_auth ] = useState({});
   const [ prev_chat, set_prev_chat ] = useState([]);
   const [ other_username, set_other_username ] = useState('');
+  const [ is_open, set_is_open ] = useState(false);
 
   const fetch_messages = async (username) =>
   {
@@ -33,6 +34,7 @@ const Data_provider = ({children}) =>
         auth, set_auth,
         prev_chat, set_prev_chat,
         other_username, set_other_username,
+        is_open, set_is_open,
         fetch_messages        
       }}
     >

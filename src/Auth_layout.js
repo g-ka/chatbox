@@ -9,7 +9,7 @@ const Auth_layout = () => {
   const location = useLocation();
 
   return (
-    <main>            
+    <>            
       {
         auth?.username ?
           <>
@@ -18,7 +18,7 @@ const Auth_layout = () => {
           </> :
             <Navigate to='/sign_in' state={{ from: location }} replace />
       }             
-    </main>
+    </>
   )
 }
 
