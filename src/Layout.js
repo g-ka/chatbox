@@ -12,6 +12,7 @@ const Layout = () => {
         const text = e.target.className.baseVal;   
         if(!text?.includes('header_menu_icon')) set_is_open(false);        
       }}
+      style={{ position: 'relative' }}
     >
       <Outlet />
     </main>    

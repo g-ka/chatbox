@@ -15,6 +15,9 @@ body {
   align-items: center;
   background-color: black;
   padding: 1rem 3rem;
+  position: fixed;
+  top: 0;
+  z-index: 101;
 }
 .header_name {
   text-decoration: none;
@@ -385,6 +388,8 @@ body {
   row-gap: 2rem;
   width: 100%;
   align-items: center;
+  padding-top: 10rem;
+  position: relative;
 }
 .chat_box_section_top {
   padding: 1rem;
@@ -394,6 +399,8 @@ body {
   text-align: center;
   font-size: 1.2rem;
   font-weight: 700;
+  position: fixed;
+  top: 4.3rem;
 }
 .chat_box_section_chat {
   display: flex;

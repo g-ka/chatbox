@@ -7,6 +7,9 @@
   align-items: center;
   background-color: black;
   padding: 1rem 3rem;
+  position: fixed;
+  top: 0;
+  z-index: 101;
 
   &_name{
     text-decoration: none;

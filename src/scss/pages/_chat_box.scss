@@ -4,6 +4,8 @@
   row-gap: 2rem;
   width: 100%;
   align-items: center;
+  padding-top: 10rem;
+  position: relative;
 
   &_top{
     padding: 1rem;
@@ -13,6 +15,8 @@
     text-align: center;
     font-size: 1.2rem;
     font-weight: 700;
+    position: fixed;
+    top: 4.3rem;
   }
   
   &_chat{
