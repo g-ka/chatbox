@@ -38,6 +38,10 @@ body {
   transform: translateY(-50%);
 }
 
+.initial_error {
+  color: red;
+}
+
 .signup_section {
   display: inline-flex;
   flex-direction: column;
