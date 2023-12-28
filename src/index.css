@@ -415,8 +415,9 @@ body {
 .chat_box_section_chat_right {
   display: flex;
   align-items: center;
-  column-gap: 0.5%;
+  justify-content: space-between;
   margin-left: auto;
+  width: 100%;
 }
 .chat_box_section_chat_right_trash {
   cursor: pointer;
