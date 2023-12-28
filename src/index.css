@@ -358,6 +358,7 @@ body {
   row-gap: 2rem;
   align-items: center;
   position: relative;
+  padding-top: 2rem;
 }
 .connections_section_fetching_msg {
   margin-top: 2rem;
