@@ -49,7 +49,7 @@ const Connections = () => {
 
   const fetch_messages = async (username) =>
   {
-    set_msg('fetching chat');
+    set_msg('fetching chat...');
 
     try
     {
@@ -85,7 +85,7 @@ const Connections = () => {
 
   return (
     <section className='connections_section'>
-      <div>
+      <div className='connections_section_fetching_msg'>
         <p>{msg}</p>
       </div>
       {

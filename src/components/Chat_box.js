@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Axios from '../api/Axios';
 import useData from '../hooks/useData';
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faPaperPlane, faRotateRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Chat_box = () => {
@@ -90,11 +90,7 @@ const Chat_box = () => {
     <section className='chat_box_section'>
       <div className='chat_box_section_top'>
         CHAT BOX - {other_username}
-      </div>
-      <div className='chat_box_section_navs'>
-        <Link className='chat_box_section_navs_back_button' to='/auth/connections'>Back</Link>      
-        <button onClick={() => fetch_messages(other_username)}>Refresh to load new messages</button>
-      </div>  
+      </div>        
       <ul className='chat_box_section_chat'>
         {
           prev_chat.map(chat => {
@@ -117,11 +113,22 @@ const Chat_box = () => {
         />
         <button 
           className='chat_box_section_form_send_button'
+          type='submit'
           style={button_event}
         >
-          {button}
+          <FontAwesomeIcon className='chat_box_section_form_send_button_icon' icon={faPaperPlane}/>
         </button>
-      </form>      
+        <div className='chat_box_section_form_navs'>             
+          <button 
+            className='chat_box_section_form_navs_refresh'
+            onClick={() => fetch_messages(other_username)}
+            type='button'
+          >
+            <FontAwesomeIcon className='chat_box_section_form_navs_refresh_icon' icon={faRotateRight}/>
+          </button>
+          <Link className='chat_box_section_form_navs_back' to='/auth/connections'>Back</Link>   
+        </div>
+      </form>            
     </section>
   )
 }

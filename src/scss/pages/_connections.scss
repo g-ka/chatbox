@@ -1,25 +1,76 @@
+@use "../abstract/media_queries" as mq;
+
 .connections_section{
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
   align-items: center;
+  position: relative;
 
-  ul{
+  &_fetching_msg{
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(88, 88, 251);
+    text-transform: capitalize;
+  }
+
+  &_loading{
+    font-size: 2rem;
+    font-weight: 700;   
+    margin-top: 5rem;
+  }
+
+  &_list{
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
     padding: 1rem 2rem;
-    li{
-      width: 50vw;
+    width: 100%;
+
+    &_user{
       display: flex;      
-      background-color: burlywood;
       padding: 1rem 1.5rem;
       border-radius: 10px;
       justify-content: space-between;
+      align-items: center;
+      background-color: rgb(122, 155, 254);
+      box-shadow: 3px 3px 3px rgba(0,0,0,0.2);    
+
+      @include mq.responsive('xxs')
+      {
+        flex-direction: column;
+        row-gap: 1.5rem;
+      }
 
       p{
+        font-size: 1.5rem;
         text-transform: capitalize;
       }
+
+      button{
+        background-color: black;
+        border: none;
+        border-radius: 5px;
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        color: white;
+        cursor: pointer;
+      }
+      button:hover{
+        background-color: rgba(0,0,0,0.8);
+      }
     }
+  }
+
+  &_err{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgb(252, 80, 80);
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
   }
 }
