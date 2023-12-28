@@ -193,11 +193,11 @@ body {
 }
 
 .home_section {
-  position: relative;
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
   align-items: center;
+  padding-top: 4rem;
 }
 .home_section_loading {
   font-size: 2rem;
@@ -256,14 +256,16 @@ body {
   background-color: rgba(252, 80, 80, 0.8);
 }
 .home_section_connection_err_message {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  background-color: rgb(252, 80, 80);
-  color: white;
+  margin-top: 50vh;
+  margin-right: 50vw;
+  transform: translateY(-200%) translateX(120%);
+  color: rgb(88, 88, 251);
   padding: 0.5rem 1rem;
   font-size: 1.5rem;
   font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  pointer-events: none;
 }
 
 .req_sent_section {
@@ -271,6 +273,12 @@ body {
   flex-direction: column;
   row-gap: 2rem;
   align-items: center;
+  padding-top: 4rem;
+}
+.req_sent_section_loading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 5rem;
 }
 .req_sent_section ul {
   display: flex;
@@ -289,12 +297,30 @@ body {
 .req_sent_section ul li p {
   text-transform: capitalize;
 }
+.req_sent_section_error {
+  margin-top: 50vh;
+  margin-right: 50vw;
+  transform: translateY(-200%) translateX(120%);
+  color: rgb(88, 88, 251);
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  pointer-events: none;
+}
 
 .req_recieved_section {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
   align-items: center;
+  padding-top: 4rem;
+}
+.req_recieved_section_loading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 5rem;
 }
 .req_recieved_section ul {
   display: flex;
@@ -312,6 +338,18 @@ body {
 }
 .req_recieved_section ul li p {
   text-transform: capitalize;
+}
+.req_recieved_section_error {
+  margin-top: 50vh;
+  margin-right: 50vw;
+  transform: translateY(-200%) translateX(120%);
+  color: rgb(88, 88, 251);
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  pointer-events: none;
 }
 
 .connections_section {

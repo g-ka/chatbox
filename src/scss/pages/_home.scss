@@ -1,11 +1,11 @@
 @use "../abstract/media_queries" as mq;
 
 .home_section{
-  position: relative;
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
   align-items: center;
+  padding-top: 4rem;
 
   &_loading{
     font-size: 2rem;
@@ -70,13 +70,15 @@
   }
 
   &_connection_err_message{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    background-color: rgb(252, 80, 80);
-    color: white;
+    margin-top: 50vh;
+    margin-right: 50vw;
+    transform: translateY(-200%) translateX(120%);    
+    color: rgb(88, 88, 251);
     padding: 0.5rem 1rem;
     font-size: 1.5rem;
     font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    pointer-events: none;
   }
 }
