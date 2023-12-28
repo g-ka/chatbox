@@ -50,13 +50,12 @@ const Req_sent = () => {
                       <li key={user.username}  className='req_sent_section_list_user'>
                         <p>{user.username}</p>
                         <p>{user.date}</p>
-                        <p>{user.time}</p>
                       </li>
                     )
                   })
                 }
               </ul> :
-                <p className='req_sent_section_error'>{err_msg || 'No new requests sent'}</p>            
+                <p className='req_sent_section_error'>{err_msg || 'No pending sent requests'}</p>            
       }
     </section>
   )

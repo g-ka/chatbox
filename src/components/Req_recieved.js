@@ -82,12 +82,11 @@ const Req_recieved = () => {
                       <li key={user.username}  className='req_recieved_section_list_user'>
                         <p>{user.username}</p>
                         <p>{user.date}</p>
-                        <p>{user.time}</p>
                         <button 
                           onClick={() => req_accept_handler(user.username)}
                           style={{pointerEvents: req_accept_loading ? 'none' : 'auto'}}
                         >
-                          Accept Request
+                          Accept
                         </button>
                       </li>
                     )

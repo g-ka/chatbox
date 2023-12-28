@@ -173,19 +173,21 @@ const Home = () => {
               </ul> :
                 <p className='home_section_empty_users'>{users_list_err_msg || 'No users'}</p>
       }      
-      <button 
-        onClick={sign_out_handler}
-        className='home_section_sign_out'
-        style={sign_out_styles}
-      >
-        {signout_button}
-      </button>
-      <p 
-        className='home_section_connection_err_message'
-        style={{opacity: req_sent_err_msg? '1' : '0'}}
-      >
-        {req_sent_err_msg}
-      </p>
+      <footer className='home_section_footer'>
+        <button 
+          onClick={sign_out_handler}
+          className='home_section_footer_sign_out'
+          style={sign_out_styles}
+        >
+          {signout_button}
+        </button>
+        <p 
+          className='home_section_footer_connection_err_message'
+          style={{display: req_sent_err_msg? 'block' : 'none'}}
+        >
+          {req_sent_err_msg}
+        </p>
+      </footer>      
     </section>    
   )
 }

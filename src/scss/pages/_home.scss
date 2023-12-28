@@ -5,7 +5,8 @@
   flex-direction: column;
   row-gap: 2rem;
   align-items: center;
-  padding-top: 4rem;
+  padding: 4rem 0;
+  position: relative;
 
   &_loading{
     font-size: 2rem;
@@ -56,29 +57,38 @@
     }
   }
 
-  &_sign_out{
-    background-color: rgb(252, 80, 80);
-    border: none;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
-    color: white;
-    cursor: pointer;
-  }
-  &_sign_out:hover{
-    background-color: rgba(252, 80, 80, 0.8);
-  }
-
-  &_connection_err_message{
-    margin-top: 50vh;
-    margin-right: 50vw;
-    transform: translateY(-200%) translateX(120%);    
-    color: rgb(88, 88, 251);
-    padding: 0.5rem 1rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 10px;
-    pointer-events: none;
-  }
+  &_footer{   
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    
+    &_sign_out{
+      background-color: rgb(252, 80, 80);
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 1.2rem;
+      color: white;
+      cursor: pointer;
+    }
+    &_sign_out:hover{
+      background-color: rgba(252, 80, 80, 0.8);
+    }
+  
+    &_connection_err_message{
+      position: fixed;
+      bottom: 4rem;
+      left: 50vw;
+      transform: translateX(-50%);
+      background-color: rgb(88, 88, 251);
+      color: white;
+      padding: 0.5rem 1rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      pointer-events: none;
+    }
+  }  
 }

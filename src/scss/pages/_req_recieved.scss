@@ -1,3 +1,5 @@
+@use "../abstract/media_queries" as mq;
+
 .req_recieved_section{
   display: flex;
   flex-direction: column;
@@ -11,29 +13,54 @@
     margin-top: 5rem;
   }
 
-  ul{
+  &_list{
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
-    padding: 1rem 2rem;
-    li{
-      width: 50vw;
+    padding: 3rem 2rem;
+    width: 100%;
+
+    &_user{
       display: flex;      
-      background-color: burlywood;
       padding: 1rem 1.5rem;
       border-radius: 10px;
       justify-content: space-between;
+      align-items: center;
+      background-color: rgb(122, 155, 254);
+      box-shadow: 3px 3px 3px rgba(0,0,0,0.2);    
+
+      @include mq.responsive('xs')
+      {
+        flex-direction: column;
+        row-gap: 1.5rem;
+      }
 
       p{
+        font-size: 1.5rem;
         text-transform: capitalize;
+      }
+
+      button{
+        background-color: black;
+        border: none;
+        border-radius: 5px;
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        color: white;
+        cursor: pointer;
+      }
+      button:hover{
+        background-color: rgba(0,0,0,0.8);
       }
     }
   }
 
+
   &_error{
+    width: 100%;
+    text-align: center;
     margin-top: 50vh;
-    margin-right: 50vw;
-    transform: translateY(-200%) translateX(120%);    
+    transform: translateY(-100%);
     color: rgb(88, 88, 251);
     padding: 0.5rem 1rem;
     font-size: 1.5rem;

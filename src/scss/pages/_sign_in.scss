@@ -1,11 +1,10 @@
 .signin_section{
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: center;
   align-items: center;
-  margin-left: 50%;
-  transform: translateX(-50%);
+  padding: 0 2rem;
 
   &_error{
     font-size: 1.1rem;

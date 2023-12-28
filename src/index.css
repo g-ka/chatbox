@@ -87,13 +87,12 @@ body {
 }
 
 .signup_section {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: center;
   align-items: center;
-  margin-left: 50%;
-  transform: translateX(-50%);
+  padding: 0 2rem;
 }
 .signup_section_error {
   font-size: 1.1rem;
@@ -140,13 +139,12 @@ body {
 }
 
 .signin_section {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: center;
   align-items: center;
-  margin-left: 50%;
-  transform: translateX(-50%);
+  padding: 0 2rem;
 }
 .signin_section_error {
   font-size: 1.1rem;
@@ -197,7 +195,8 @@ body {
   flex-direction: column;
   row-gap: 2rem;
   align-items: center;
-  padding-top: 4rem;
+  padding: 4rem 0;
+  position: relative;
 }
 .home_section_loading {
   font-size: 2rem;
@@ -243,23 +242,31 @@ body {
 .home_section_list_user button:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
-.home_section_sign_out {
+.home_section_footer {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+}
+.home_section_footer_sign_out {
   background-color: rgb(252, 80, 80);
   border: none;
-  border-radius: 5px;
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
   color: white;
   cursor: pointer;
 }
-.home_section_sign_out:hover {
+.home_section_footer_sign_out:hover {
   background-color: rgba(252, 80, 80, 0.8);
 }
-.home_section_connection_err_message {
-  margin-top: 50vh;
-  margin-right: 50vw;
-  transform: translateY(-200%) translateX(120%);
-  color: rgb(88, 88, 251);
+.home_section_footer_connection_err_message {
+  position: fixed;
+  bottom: 4rem;
+  left: 50vw;
+  transform: translateX(-50%);
+  background-color: rgb(88, 88, 251);
+  color: white;
   padding: 0.5rem 1rem;
   font-size: 1.5rem;
   font-weight: 600;
@@ -280,27 +287,37 @@ body {
   font-weight: 700;
   margin-top: 5rem;
 }
-.req_sent_section ul {
+.req_sent_section_list {
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
-  padding: 1rem 2rem;
+  padding: 3rem 2rem;
+  width: 100%;
 }
-.req_sent_section ul li {
-  width: 50vw;
+.req_sent_section_list_user {
   display: flex;
-  background-color: burlywood;
   padding: 1rem 1.5rem;
   border-radius: 10px;
   justify-content: space-between;
+  align-items: center;
+  background-color: rgb(122, 155, 254);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
-.req_sent_section ul li p {
+@media only screen and (max-width: 390px) {
+  .req_sent_section_list_user {
+    flex-direction: column;
+    row-gap: 1.5rem;
+  }
+}
+.req_sent_section_list_user p {
+  font-size: 1.5rem;
   text-transform: capitalize;
 }
 .req_sent_section_error {
+  width: 100%;
+  text-align: center;
   margin-top: 50vh;
-  margin-right: 50vw;
-  transform: translateY(-200%) translateX(120%);
+  transform: translateY(-100%);
   color: rgb(88, 88, 251);
   padding: 0.5rem 1rem;
   font-size: 1.5rem;
@@ -322,27 +339,49 @@ body {
   font-weight: 700;
   margin-top: 5rem;
 }
-.req_recieved_section ul {
+.req_recieved_section_list {
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
-  padding: 1rem 2rem;
+  padding: 3rem 2rem;
+  width: 100%;
 }
-.req_recieved_section ul li {
-  width: 50vw;
+.req_recieved_section_list_user {
   display: flex;
-  background-color: burlywood;
   padding: 1rem 1.5rem;
   border-radius: 10px;
   justify-content: space-between;
+  align-items: center;
+  background-color: rgb(122, 155, 254);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
-.req_recieved_section ul li p {
+@media only screen and (max-width: 455px) {
+  .req_recieved_section_list_user {
+    flex-direction: column;
+    row-gap: 1.5rem;
+  }
+}
+.req_recieved_section_list_user p {
+  font-size: 1.5rem;
   text-transform: capitalize;
 }
+.req_recieved_section_list_user button {
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+}
+.req_recieved_section_list_user button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
 .req_recieved_section_error {
+  width: 100%;
+  text-align: center;
   margin-top: 50vh;
-  margin-right: 50vw;
-  transform: translateY(-200%) translateX(120%);
+  transform: translateY(-100%);
   color: rgb(88, 88, 251);
   padding: 0.5rem 1rem;
   font-size: 1.5rem;
@@ -358,7 +397,6 @@ body {
   row-gap: 2rem;
   align-items: center;
   position: relative;
-  padding-top: 2rem;
 }
 .connections_section_fetching_msg {
   margin-top: 5rem;
