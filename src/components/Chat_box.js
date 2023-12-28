@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Axios from '../api/Axios';
 import useData from '../hooks/useData';
-import { faTrash, faPaperPlane, faRotateRight } from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faPaperPlane, faRotateRight, faCompass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Chat_box = () => {
@@ -12,6 +12,7 @@ const Chat_box = () => {
   const [ message, set_message ] = useState('');
   const [ button , set_button ] = useState('Send');
   const [ send_err_msg, set_send_err_msg ] = useState('');
+  const [ icon, set_icon ] = useState(faPaperPlane);
   const [ del_load, set_del_load ] = useState(false);
 
   const button_event = { pointerEvents: button === 'Send' ? 'auto' :'none'};
@@ -21,6 +22,7 @@ const Chat_box = () => {
   {
     e.preventDefault();
     set_button('Sending');
+    set_icon(faCompass);
 
     try
     {
@@ -40,6 +42,7 @@ const Chat_box = () => {
       {
         set_message('');
         set_button('Send');
+        set_icon(faPaperPlane);
         fetch_messages(other_username);
       }
     }
@@ -55,6 +58,7 @@ const Chat_box = () => {
         setTimeout(() =>
         {
           set_button('Send');
+          set_icon(faPaperPlane);
         }, 2000);
       } 
     } 
@@ -116,7 +120,7 @@ const Chat_box = () => {
           type='submit'
           style={button_event}
         >
-          <FontAwesomeIcon className='chat_box_section_form_send_button_icon' icon={faPaperPlane}/>
+          <FontAwesomeIcon className='chat_box_section_form_send_button_icon' icon={icon} spin={icon===faCompass ? true : false}/>
         </button>
         <div className='chat_box_section_form_navs'>             
           <button 
