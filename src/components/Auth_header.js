@@ -49,9 +49,15 @@ const Auth_header = () => {
       </nav>      
       <button 
         className='header_menu'
-        onClick={() => set_is_open(prev => !prev)}
       >
-        <FontAwesomeIcon className='header_menu_icon' icon={faBars} />
+        <FontAwesomeIcon 
+          className='header_menu_icon' 
+          icon={faBars} 
+          onClick={(e) => {
+            e.stopPropagation();
+            set_is_open(prev => !prev);             
+          }} 
+        />
         <Hamburger_nav_bar />
       </button>
     </header>
