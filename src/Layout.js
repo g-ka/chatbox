@@ -9,8 +9,8 @@ const Layout = () => {
   return (
     <main
       onClick={e => {
-        const text = e.target.className.baseVal;   
-        if(!text?.includes('header_menu_icon')) set_is_open(false);        
+        const text = typeof(e.target.className)==='object' ? '' : e.target.className;  
+        if(!text?.includes('ham_nav') || text?.includes('ham_nav_link')) set_is_open(false);                  
       }}
       style={{ position: 'relative' }}
     >
